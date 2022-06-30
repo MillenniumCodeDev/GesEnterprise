@@ -10,7 +10,7 @@ router.post("/", async function(req, res, next) {
   const password = req.body.password; // Password should be SHA-256 encrypted
 
   if (!email || !password) { gesenterprise.warn(`${req.id}: Missing email or password`); return next(createError(400)); } // Doesnt execute the rest of the code
-
+  // a
   try {
     const key = await gesenterprise.auth.login(email, password);
     if (!key) { return next(createError(401));}
