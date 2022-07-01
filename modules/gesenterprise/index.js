@@ -70,6 +70,7 @@ class session {
           "date": Date.now()
         };
         await dbClient.collection("sessions").insertOne(session);
+        return session._id;
       } else {
         return "WRONG_EMAIL_OR_PASSWORD";
       }
