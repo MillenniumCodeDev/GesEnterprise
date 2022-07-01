@@ -13,6 +13,8 @@ router.post("/", async function(req, res, next) {
       res.json({
         "sucess": true
       });
+    } else {
+      return next(createError(500)); // Will only be false if something went wrong
     }
   } catch (err) {
     gesenterprise.error(`${req.id}: Something went wrong: ` + err);
