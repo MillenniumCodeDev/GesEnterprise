@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 
 
 const dir = "./routes/";
-const paths = walkSync(dir, { directories: false }); //Express doesn't like async stuff
+const paths = walkSync(dir, { directories: false }); // Have to change this at some point
 paths.forEach(function (value) {
   let value_nojs = value.slice(0, -3); //removes .js, assuming all files are .js
 
